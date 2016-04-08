@@ -72,7 +72,7 @@
     </servlet-mapping>
 
 
-    <!-- 配置session超时时间， 单位分钟 -->
+    <!-- 配置session超时时间， 单sad位分钟 -->
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
