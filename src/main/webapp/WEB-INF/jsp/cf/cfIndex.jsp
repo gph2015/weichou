@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page isELIgnored="false" %>
+<%@ page isELIgnored="false"%>
+<%@ include file="../common/taglibs.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,46 +60,10 @@
             <li style="width: 8.33333333333333%;"><a href="http://www.zhongchou.com/deal-show/id-374215"
                                                      style="background-image: url(http://zcr1.ncfstatic.com/attachment/201604/05/10/1459822409.jpg);"
                                                      target="_blank"></a></li>
-            <li style="width: 8.33333333333333%;"><a href="http://www.zhongchou.com/deal-show/id-374416"
-                                                     style="background-image: url(http://zcr1.ncfstatic.com/attachment/201604/05/09/1459820909.jpg);"
-                                                     target="_blank"></a></li>
-            <li style="width: 8.33333333333333%;"><a href="http://www.zhongchou.com/deal-show/id-363637"
-                                                     style="background-image: url(http://zcr1.ncfstatic.com/attachment/201604/05/09/1459820969.png);"
-                                                     target="_blank"></a></li>
-            <li style="width: 8.33333333333333%;"><a href="http://www.zhongchou.com/deal-show/id-386221"
-                                                     style="background-image: url(http://zcr1.ncfstatic.com/attachment/201604/05/09/1459820977.jpg);"
-                                                     target="_blank"></a></li>
-            <li style="width: 8.33333333333333%;"><a href="http://www.zhongchou.com/deal-show/id-367471"
-                                                     style="background-image: url(http://zcr1.ncfstatic.com/attachment/201604/05/09/1459821159.jpg);"
-                                                     target="_blank"></a></li>
-            <li style="width: 8.33333333333333%;"><a href="http://www.zhongchou.com/special-choujiang"
-                                                     style="background-image: url(http://zcr1.ncfstatic.com/attachment/201603/31/17/1459415241.jpg);"
-                                                     target="_blank"></a></li>
-            <li style="width: 8.33333333333333%;"><a href="http://www.zhongchou.com/special-time"
-                                                     style="background-image: url(http://zcr1.ncfstatic.com/attachment/201604/01/14/1459493604.jpg);"
-                                                     target="_blank"></a></li>
-            <li style="width: 8.33333333333333%;"><a href="http://www.zhongchou.com/deal-show/id-367552"
-                                                     style="background-image: url(http://zcr1.ncfstatic.com/attachment/201604/05/10/1459822402.jpg);"
-                                                     target="_blank"></a></li>
-            <li style="width: 8.33333333333333%;"><a href="http://www.zhongchou.com/deal-show/id-374215"
-                                                     style="background-image: url(http://zcr1.ncfstatic.com/attachment/201604/05/10/1459822409.jpg);"
-                                                     target="_blank"></a></li>
-            <li style="width: 8.33333333333333%;"><a href="http://www.zhongchou.com/deal-show/id-374416"
-                                                     style="background-image: url(http://zcr1.ncfstatic.com/attachment/201604/05/09/1459820909.jpg);"
-                                                     target="_blank"></a></li>
-            <li style="width: 8.33333333333333%;"><a href="http://www.zhongchou.com/deal-show/id-363637"
-                                                     style="background-image: url(http://zcr1.ncfstatic.com/attachment/201604/05/09/1459820969.png);"
-                                                     target="_blank"></a></li>
         </ul>
         <div class="indexBControls" id="indexBControls">
             <div class="indexBPageitem"></div>
-            <div class="indexBPageitem"></div>
-            <div class="indexBPageitem"></div>
-            <div class="indexBPageitem"></div>
             <div class="indexBPageitem cur"></div>
-            <div class="indexBPageitem"></div>
-            <div class="indexBPageitem"></div>
-            <div class="indexBPageitem"></div>
         </div>
         <div class="indexBPage" id="indexBPage">
             <a href="javascript:;" class="pre" id="bannerPre"></a>
@@ -115,17 +80,17 @@
 <div class="indexDataBox">
     <div class="mainInnerBox clearfix">
         <div class="indexDataItem" style="margin-left: 85px;">
-            <p class="dataText">14496</p>
+            <p class="dataText">${xmzs}</p>
 
             <div class="xmzs">项目总数</div>
         </div>
         <div class="indexDataItem" style="margin-left: 239px;">
-            <p class="dataText">775153</p>
+            <p class="dataText">${ljzcr}</p>
 
             <div class="ljzcr">累计支持人</div>
         </div>
         <div class="indexDataItem" style="margin-left: 210px;">
-            <p class="dataText">168,556,394</p>
+            <p class="dataText">${ljzzje}</p>
 
             <div class="ljzzje">累计筹资金额</div>
         </div>
@@ -133,338 +98,66 @@
 </div>
 <!-- 数据指标 end -->
 
-<!-- 奖励众筹 begin -->
 <div class="indexZCWrap">
     <div class="mainInnerBox">
         <h3 class="indexZCH3"><a href="${ctx }/cf/cfList.j">热门推荐</a></h3>
-            <li class="moreA siteIlB_item">
-                <a href="${ctx }/cf/cfList.j" target="_blank ">更多&gt;</a>
-            </li>
+        <li class="moreA siteIlB_item">
+            <a href="${ctx }/cf/cfList.j" target="_blank ">更多&gt;</a>
+        </li>
         <!-- 卡片列表 begin -->
         <div class="indCardListWrap clearfix">
-            <div class="indCardItem">
-                <a href="http://www.zhongchou.com/deal-show/id-382084" class="siteCardItemImgA ind" target="_blank">
-                    <img src="${pageContext.request.contextPath}/static/images/56f16856ad7741a_t9_760x510_thumb_320x240.jpg"
-                         alt="GAOSIN智能鸡尾酒戒指">
-                    <span class="siteCardStatus"></span>
-                </a>
+            <table>
+                <c:forEach items="${cfList}" var="item" varStatus="xh">
+                    <div class="indCardItem">
+                        <a href="http://www.zhongchou.com/deal-show/id-382084" class="siteCardItemImgA ind"
+                           target="_blank">
+                            <img src="${item.cfImg}"
+                                 alt="GAOSIN智能鸡尾酒戒指">
+                            <span class="siteCardStatus"></span>
+                        </a>
 
-                <div class="indCardICBox siteCardICBox">
-                    <div class="indCardICText">
-                        <a href="http://www.zhongchou.com/deal-show/id-382084" class="siteCardICH3" target="_blank">GAOSIN智能鸡尾酒戒指</a>
+                        <div class="indCardICBox siteCardICBox">
+                            <div class="indCardICText">
+                                <a href="http://www.zhongchou.com/deal-show/id-382084" class="siteCardICH3"
+                                   target="_blank">${item.cfName}</a>
 
-                        <p class="siteCardIC_p ind">智能也可以时尚，智能改变的不是生活，是生活的品质！</p>
-                    </div>
-                    <div class="siteCardFBox">
-
-                        <div class="siteCardFLabelBox siteIlB_box">
-                            <a href="http://www.zhongchou.com/search/prid-330000" class="site_ALink siteIlB_item"
-                               target="_blank">浙江</a>
-                            <a href="http://www.zhongchou.com/search/ciid-330100" class="site_ALink siteIlB_item"
-                               target="_blank">杭州</a>
-
-                            <a href="http://www.zhongchou.com/search/lid-4" class="site_ALink siteIlB_item"
-                               target="_blank">家居生活</a>
-                            <a href="http://www.zhongchou.com/search/lid-3" class="site_ALink siteIlB_item"
-                               target="_blank">通讯数码</a>
-                            <a href="http://www.zhongchou.com/search/lid-56188" class="site_ALink siteIlB_item"
-                               target="_blank">穿戴设备</a>
-                            <a href="http://www.zhongchou.com/search/lid-409" class="site_ALink siteIlB_item"
-                               target="_blank">原创</a>
-                            <a href="http://www.zhongchou.com/search/lid-5545" class="site_ALink siteIlB_item"
-                               target="_blank">艺术</a>
-                        </div>
-
-                        <div class="siteCardRatio">
-                            <div class="siteCardRatioInner" style="width: 51%;"></div>
-                        </div>
-                        <div class="siteCardFData">
-                            <div class="ftDiv">
-                                <p class="ftP">￥25271</p>
-
-                                <p class="scP">已筹款</p>
+                                <p class="siteCardIC_p ind">${item.cfStr}</p>
                             </div>
-                            <div class="scDiv">
-                                <p class="ftP">50</p>
+                            <div class="siteCardFBox">
 
-                                <p class="scP">支持数</p>
-                            </div>
-                            <div class="thDiv">
-                                <p class="ftP">51%</p>
+                                <div class="siteCardFLabelBox siteIlB_box">
+                                    <c:forEach items="${item.cfLabel}" var="items" varStatus="xh">
+                                        <a href="http://www.zhongchou.com/search/prid-370000"
+                                           class="site_ALink siteIlB_item"
+                                           target="_blank">${items}</a>
+                                    </c:forEach>
+                                </div>
 
-                                <p class="scP">筹款进度</p>
+                                <div class="siteCardRatio">
+                                    <div class="siteCardRatioInner" style="width: 51%;"></div>
+                                </div>
+                                <div class="siteCardFData">
+                                    <div class="ftDiv">
+                                        <p class="ftP">${item.ycAmt}</p>
+
+                                        <p class="scP">已筹款</p>
+                                    </div>
+                                    <div class="scDiv">
+                                        <p class="ftP">${item.ycCount}</p>
+
+                                        <p class="scP">支持数</p>
+                                    </div>
+                                    <div class="thDiv">
+                                        <p class="ftP">${item.cfJd}</p>
+
+                                        <p class="scP">筹款进度</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="indCardItem">
-                <a href="http://www.zhongchou.com/deal-show/id-362590" class="siteCardItemImgA ind" target="_blank">
-                    <img src="${pageContext.request.contextPath}/static/images/56e7712a883271a_t9_4000x2966_thumb_320x240.jpg"
-                         alt="清华大学五道口金融学院第四届“吾道清春”学生节">
-                    <span class="siteCardStatus"></span>
-                </a>
+                </c:forEach></table>
 
-                <div class="indCardICBox siteCardICBox">
-                    <div class="indCardICText">
-                        <a href="http://www.zhongchou.com/deal-show/id-362590" class="siteCardICH3" target="_blank">清华大学五道口金融学院第四届“吾道清春”学生节</a>
-
-                        <p class="siteCardIC_p ind">清华大学五道口金融学院学生节，是所有道口人一年一度的隆重盛会。这是一台完全由学院同学们自筹自编自导自演的一台晚会。</p>
-                    </div>
-                    <div class="siteCardFBox">
-
-                        <div class="siteCardFLabelBox siteIlB_box">
-                            <a href="http://www.zhongchou.com/search/prid-110000" class="site_ALink siteIlB_item"
-                               target="_blank">北京</a>
-
-                            <a href="http://www.zhongchou.com/search/lid-41497" class="site_ALink siteIlB_item"
-                               target="_blank">清华</a>
-                            <a href="http://www.zhongchou.com/search/lid-61627" class="site_ALink siteIlB_item"
-                               target="_blank">五道口</a>
-                            <a href="http://www.zhongchou.com/search/lid-61630" class="site_ALink siteIlB_item"
-                               target="_blank">学生节</a>
-                        </div>
-
-                        <div class="siteCardRatio">
-                            <div class="siteCardRatioInner" style="width: 21%;"></div>
-                        </div>
-                        <div class="siteCardFData">
-                            <div class="ftDiv">
-                                <p class="ftP">￥10249</p>
-
-                                <p class="scP">已筹款</p>
-                            </div>
-                            <div class="scDiv">
-                                <p class="ftP">97</p>
-
-                                <p class="scP">支持数</p>
-                            </div>
-                            <div class="thDiv">
-                                <p class="ftP">21%</p>
-
-                                <p class="scP">筹款进度</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="indCardItem">
-                <a href="http://www.zhongchou.com/deal-show/id-383335" class="siteCardItemImgA ind" target="_blank">
-                    <img src="${pageContext.request.contextPath}/static/images/56f9d2d91e0a61a_t9_640x480_thumb_320x240.jpg"
-                         alt="禅意佛心，一觉居士书法众筹第三期—禅意书法，佛在画中">
-                    <span class="siteCardStatus"></span>
-                </a>
-
-                <div class="indCardICBox siteCardICBox">
-                    <div class="indCardICText">
-                        <a href="http://www.zhongchou.com/deal-show/id-383335" class="siteCardICH3" target="_blank">禅意佛心，一觉居士书法众筹第三期—禅意书法，佛在画中</a>
-
-                        <p class="siteCardIC_p ind">新年祈福，赠长辈一幅佛心书法，禅画大师严一觉作品（众筹三期）</p>
-                    </div>
-                    <div class="siteCardFBox">
-
-                        <div class="siteCardFLabelBox siteIlB_box">
-                            <a href="http://www.zhongchou.com/search/prid-440000" class="site_ALink siteIlB_item"
-                               target="_blank">广东</a>
-                            <a href="http://www.zhongchou.com/search/ciid-442000" class="site_ALink siteIlB_item"
-                               target="_blank">中山</a>
-
-                            <a href="http://www.zhongchou.com/search/lid-23" class="site_ALink siteIlB_item"
-                               target="_blank">文玩</a>
-                            <a href="http://www.zhongchou.com/search/lid-22" class="site_ALink siteIlB_item"
-                               target="_blank">书画</a>
-                            <a href="http://www.zhongchou.com/search/lid-916" class="site_ALink siteIlB_item"
-                               target="_blank">书法</a>
-                            <a href="http://www.zhongchou.com/search/lid-61672" class="site_ALink siteIlB_item"
-                               target="_blank">启功</a>
-                            <a href="http://www.zhongchou.com/search/lid-37033" class="site_ALink siteIlB_item"
-                               target="_blank">佛</a>
-                        </div>
-
-                        <div class="siteCardRatio">
-                            <div class="siteCardRatioInner" style="width: 100%;"></div>
-                        </div>
-                        <div class="siteCardFData">
-                            <div class="ftDiv">
-                                <p class="ftP">￥2674</p>
-
-                                <p class="scP">已筹款</p>
-                            </div>
-                            <div class="scDiv">
-                                <p class="ftP">13</p>
-
-                                <p class="scP">支持数</p>
-                            </div>
-                            <div class="thDiv">
-                                <p class="ftP">159%</p>
-
-                                <p class="scP">筹款进度</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="indCardItem">
-                <a href="http://www.zhongchou.com/deal-show/id-350296" class="siteCardItemImgA ind" target="_blank">
-                    <img src="${pageContext.request.contextPath}/static/images/56cfc23a76f2c1a_t9_640x480_thumb_320x240.jpg"
-                         alt="一片叶子的修行">
-                    <span class="siteCardStatus"></span>
-                </a>
-
-                <div class="indCardICBox siteCardICBox">
-                    <div class="indCardICText">
-                        <a href="http://www.zhongchou.com/deal-show/id-350296" class="siteCardICH3" target="_blank">一片叶子的修行</a>
-
-                        <p class="siteCardIC_p ind">作为世界茶学家公认的三大海岸绿茶城市之一，有机茶获得了欧盟市场的“通行证”。
-                            众筹：将纯正的日照绿茶分享给每一位爱茶人，将日照绿茶面向全国乃至全球推广</p>
-                    </div>
-                    <div class="siteCardFBox">
-
-                        <div class="siteCardFLabelBox siteIlB_box">
-                            <a href="http://www.zhongchou.com/search/prid-370000" class="site_ALink siteIlB_item"
-                               target="_blank">山东</a>
-                            <a href="http://www.zhongchou.com/search/ciid-371100" class="site_ALink siteIlB_item"
-                               target="_blank">日照</a>
-
-                            <a href="http://www.zhongchou.com/search/lid-44" class="site_ALink siteIlB_item"
-                               target="_blank">茶酒饮品</a>
-                            <a href="http://www.zhongchou.com/search/lid-41" class="site_ALink siteIlB_item"
-                               target="_blank">生物科技</a>
-                            <a href="http://www.zhongchou.com/search/lid-52393" class="site_ALink siteIlB_item"
-                               target="_blank">春茶</a>
-                            <a href="http://www.zhongchou.com/search/lid-55546" class="site_ALink siteIlB_item"
-                               target="_blank">开园茶</a>
-                            <a href="http://www.zhongchou.com/search/lid-55549" class="site_ALink siteIlB_item"
-                               target="_blank">手工炒制茶</a>
-                        </div>
-
-                        <div class="siteCardRatio">
-                            <div class="siteCardRatioInner" style="width: 24%;"></div>
-                        </div>
-                        <div class="siteCardFData">
-                            <div class="ftDiv">
-                                <p class="ftP">￥15976</p>
-
-                                <p class="scP">已筹款</p>
-                            </div>
-                            <div class="scDiv">
-                                <p class="ftP">47</p>
-
-                                <p class="scP">支持数</p>
-                            </div>
-                            <div class="thDiv">
-                                <p class="ftP">24%</p>
-
-                                <p class="scP">筹款进度</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="indCardItem">
-                <a href="http://www.zhongchou.com/deal-show/id-333481" class="siteCardItemImgA ind" target="_blank">
-                    <img src="${pageContext.request.contextPath}/static/images/56de8ded607751a_t9_640x480_thumb_320x240.jpg"
-                         alt="一位使鹿鄂温克老人的生命书写，一个北方狩猎民族的古老记忆">
-                    <span class="siteCardStatus"></span>
-                </a>
-
-                <div class="indCardICBox siteCardICBox">
-                    <div class="indCardICText">
-                        <a href="http://www.zhongchou.com/deal-show/id-333481" class="siteCardICH3" target="_blank">一位使鹿鄂温克老人的生命书写，一个北方狩猎民族的古老记忆</a>
-
-                        <p class="siteCardIC_p ind">
-                            二十年前，他们是德国柏林人类学电影节评委会奖纪录片《神鹿啊神鹿》镜头下的家庭。二十年后，片中的老人已逾古稀，以孱弱的一己之力再次发出拯救民族的呐喊。</p>
-                    </div>
-                    <div class="siteCardFBox">
-
-                        <div class="siteCardFLabelBox siteIlB_box">
-                            <a href="http://www.zhongchou.com/search/prid-110000" class="site_ALink siteIlB_item"
-                               target="_blank">北京</a>
-
-                            <a href="http://www.zhongchou.com/search/lid-31" class="site_ALink siteIlB_item"
-                               target="_blank">人文社科</a>
-                            <a href="http://www.zhongchou.com/search/lid-30" class="site_ALink siteIlB_item"
-                               target="_blank">少儿教育</a>
-                            <a href="http://www.zhongchou.com/search/lid-15664" class="site_ALink siteIlB_item"
-                               target="_blank">民族</a>
-                            <a href="http://www.zhongchou.com/search/lid-8005" class="site_ALink siteIlB_item"
-                               target="_blank">文化</a>
-                            <a href="http://www.zhongchou.com/search/lid-12373" class="site_ALink siteIlB_item"
-                               target="_blank">记忆</a>
-                        </div>
-
-                        <div class="siteCardRatio">
-                            <div class="siteCardRatioInner" style="width: 100%;"></div>
-                        </div>
-                        <div class="siteCardFData">
-                            <div class="ftDiv">
-                                <p class="ftP">￥28422</p>
-
-                                <p class="scP">已筹款</p>
-                            </div>
-                            <div class="scDiv">
-                                <p class="ftP">152</p>
-
-                                <p class="scP">支持数</p>
-                            </div>
-                            <div class="thDiv">
-                                <p class="ftP">143%</p>
-
-                                <p class="scP">筹款进度</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="indCardItem">
-                <a href="http://www.zhongchou.com/deal-show/id-368611" class="siteCardItemImgA ind" target="_blank">
-                    <img src="${pageContext.request.contextPath}/static/images/56eae86fbbcb11a_t9_1181x787_thumb_320x240.jpg"
-                         alt="香港中文大学学生微电影《听见》">
-                    <span class="siteCardStatus"></span>
-                </a>
-
-                <div class="indCardICBox siteCardICBox">
-                    <div class="indCardICText">
-                        <a href="http://www.zhongchou.com/deal-show/id-368611" class="siteCardICH3" target="_blank">香港中文大学学生微电影《听见》</a>
-
-                        <p class="siteCardIC_p ind">
-                            电影通过独特的方式模拟听觉障碍人士的感官效果，让观众在短短的五分钟内走入一个无声的世界。我们希望通过短片使观众对听觉障碍有更多的认知，给予更多的关注。</p>
-                    </div>
-                    <div class="siteCardFBox">
-
-                        <div class="siteCardFLabelBox siteIlB_box">
-                            <a href="http://www.zhongchou.com/search/prid-810000" class="site_ALink siteIlB_item"
-                               target="_blank">香港</a>
-
-                            <a href="http://www.zhongchou.com/search/lid-202" class="site_ALink siteIlB_item"
-                               target="_blank">微电影</a>
-                            <a href="http://www.zhongchou.com/search/lid-60325" class="site_ALink siteIlB_item"
-                               target="_blank">关注残障人</a>
-                        </div>
-
-                        <div class="siteCardRatio">
-                            <div class="siteCardRatioInner" style="width: 100%;"></div>
-                        </div>
-                        <div class="siteCardFData">
-                            <div class="ftDiv">
-                                <p class="ftP">￥3935</p>
-
-                                <p class="scP">已筹款</p>
-                            </div>
-                            <div class="scDiv">
-                                <p class="ftP">69</p>
-
-                                <p class="scP">支持数</p>
-                            </div>
-                            <div class="thDiv">
-                                <p class="ftP">132%</p>
-
-                                <p class="scP">筹款进度</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- 卡片列表 end -->
         <a href="${ctx }/cf/cfList.j" class="indCardListMoreA btn_ALink" target="_blank">浏览更多项目</a>
