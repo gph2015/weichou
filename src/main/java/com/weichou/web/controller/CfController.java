@@ -248,8 +248,11 @@ public class CfController extends BaseController {
      * @return
      */
     @RequestMapping("/cfDetail")
-    public ModelAndView cfDetail(String code) {
+    public ModelAndView cfDetail(String prductId) {
         ModelAndView modelAndView = new ModelAndView("/cf/cfDetail");
+
+
+
         return modelAndView;
     }
 
