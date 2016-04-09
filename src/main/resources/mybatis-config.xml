@@ -19,6 +19,10 @@
     </settings>
 
     <!-- 命名空间 -->
+    <typeAliases>
+        <typeAlias alias="product" type="com.weichou.entity.Product"/>
+        <typeAlias alias="productImg" type="com.weichou.entity.ProductImg"/>
+    </typeAliases>
 
     <!-- 映射map -->
     <mappers>
