@@ -8,10 +8,9 @@
     <packaging>war</packaging>
     <name>weichou-serivce Maven Webapp</name>
     <url>http://maven.apache.org</url>
-    <repositories>
-    </repositories>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <java-version>1.7</java-version>
         <slf4j.version>1.7.5</slf4j.version>
         <junit.version>4.11</junit.version>
@@ -25,15 +24,23 @@
         <commons-codec.version>1.6</commons-codec.version>
         <dom4j.version>1.6.1</dom4j.version>
         <mysql-connector.version>5.1.17</mysql-connector.version>
+        <!--<httpclient.version>4.2.2</httpclient.version>-->
         <httpclient.version>4.3.6</httpclient.version>
         <joda-time.version>2.1</joda-time.version>
         <logback-ext-spring.version>0.1.1</logback-ext-spring.version>
         <groovy.version>1.8.6</groovy.version>
         <raven.version>4.1.1</raven.version>
         <mybatis.version>3.2.4</mybatis.version>
+        <activemq.version>5.7.0</activemq.version>
+        <!--<unitils.version>3.4.2</unitils.version>-->
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.6.1</version>
+        </dependency>
         <dependency>
             <groupId>commons-configuration</groupId>
             <artifactId>commons-configuration</artifactId>
@@ -288,6 +295,7 @@
             <version>${jackson.version}</version>
         </dependency>
 
+
         <dependency>
             <groupId>org.logback-extensions</groupId>
             <artifactId>logback-ext-spring</artifactId>
@@ -314,6 +322,7 @@
             <artifactId>perf4j</artifactId>
             <version>0.9.16</version>
         </dependency>
+
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
@@ -413,6 +422,57 @@
                     <webAppSourceDirectory>src/main/webapp</webAppSourceDirectory>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <delete file="src/main/resources/config.properties"/>
+                                <copy file="${config_file}"
+                                      tofile="src/main/resources/config.properties"/>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <config_file>
+                    src/main/resources/config_DEV.properties
+                </config_file>
+            </properties>
+            <!--<activation>-->
+            <!--<activeByDefault>true</activeByDefault>-->
+            <!--</activation>-->
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <config_file>
+                    src/main/resources/config_TEST.properties
+                </config_file>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <config_file>
+                    src/main/resources/config_PROD.properties
+                </config_file>
+            </properties>
+        </profile>
+    </profiles>
 </project>

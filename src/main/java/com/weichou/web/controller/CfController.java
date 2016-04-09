@@ -1,6 +1,12 @@
 package com.weichou.web.controller;
 
+import com.weichou.entity.Product;
 import com.weichou.model.CfCardModel;
+import com.weichou.dao.ProductDao;
+import com.weichou.service.ProductService;
+import com.weichou.util.result.ResultStatus;
+import com.weichou.util.utils.ServiceException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,6 +23,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/cf")
 public class CfController extends BaseController {
+    @Autowired
+    ProductService productService;
 
     /**
      * 跳转众筹首页
@@ -250,8 +258,12 @@ public class CfController extends BaseController {
     @RequestMapping("/cfDetail")
     public ModelAndView cfDetail(String prductId) {
         ModelAndView modelAndView = new ModelAndView("/cf/cfDetail");
-
-
+        try {
+            Product product = productService.getById(1);
+            modelAndView.addObject("product", product);
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
 
         return modelAndView;
     }

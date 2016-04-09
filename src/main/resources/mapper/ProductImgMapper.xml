@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.weichou.dao.productImgDao">
+<mapper namespace="com.weichou.dao.ProductImgDao">
 
-    <resultMap id="authList" type="com.weichou.entity.productImg">
+    <resultMap id="authList" type="com.weichou.entity.ProductImg">
         <result column="id" property="id"/>
         <result column="product_id" property="productId"/>
         <result column="img" property="img"/>
