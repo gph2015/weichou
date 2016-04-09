@@ -1869,14 +1869,14 @@ var loginRegisterJump = "";
 function loginDialog() {
     var loginTpl = '<div class="titleWrap"><div class="title">登录<a class="shut-down-icon Js-pop-close"></a></div></div>\
                  <div class="logwrap clearfix">\
-                 <form action="/user-ajax_login" wx-validator wx-validator-ajax name="loginForm" wx-validator-single-error="registerFormError">\
+                 <form action="/User-ajax_login" wx-validator wx-validator-ajax name="loginForm" wx-validator-single-error="registerFormError">\
                  <div class="logleft"><span id="registerFormError" class="error-text"></span>\
                  <div class="shell clearfix"><input class="foc" name="username" wx-validator-rule="required" wx-validator-username-required="*请输入账号" wx-validator-placeholder="用户名/手机号/邮箱" type="text" ></div>\
                  <div class="shell clearfix"><input type="password"  name="user_pwd" wx-validator-rule="required|rangelength" wx-validator-param="|6-16"  wx-validator-user_pwd-required="*请输入密码" wx-validator-placeholder="密码"></div>\
                  <div class="numwrap shell clearfix hidden"><input disabled="disabled" id="v_code" type="text" name="code" wx-validator-code-required="*请输入图形验证码" wx-validator-placeholder="验证码"><a href="javascript:;"><img id="m_code" style="width:78px;height:40px;"\
               	src="/verify.php" onclick="this.src=\'/verify.php?\' + Math.random();" class="get-verification-code" />\
                  </a></div>\
-                 <div class="shell submitwrap clearfix"><a id="login-btn" class="zc" href="javascript:;">登录</a><a class="wjmm" href="/user-getpassword">忘记密码</a></div>\
+                 <div class="shell submitwrap clearfix"><a id="login-btn" class="zc" href="javascript:;">登录</a><a class="wjmm" href="/User-getpassword">忘记密码</a></div>\
                  </div>\
                  <div class="logright"><span class="error-text"></span>\
                  <div class="shell zhdl2"><a class="Js-mshowLogin" href="javascript:;">手机短信登录</a></div>\
@@ -1890,7 +1890,7 @@ function loginDialog() {
 
     var mloginTpl = '<div class="titleWrap"><div class="title">登录<a class="shut-down-icon Js-pop-close"></a></div></div>\
                   <div class="logwrap clearfix">\
-                  <form action="/user-ajax_sms_login" wx-validator wx-validator-ajax name="mloginForm" wx-validator-single-error="registerFormError">\
+                  <form action="/User-ajax_sms_login" wx-validator wx-validator-ajax name="mloginForm" wx-validator-single-error="registerFormError">\
                   <div class="logleft"><span id="registerFormError" class="error-text"></span>\
                   <div class="shell clearfix"><input class="foc" name="mobile" wx-validator-rule="required|mobile" wx-validator-username-required="*请输入手机号" wx-validator-placeholder="手机号(无需注册也可登录)" type="text"></div>\
                   <div class="numwrap shell clearfix hidden"><input disabled="disabled" id="v_code"  type="text" name="code" wx-validator-code-required="*请输入图形验证码" wx-validator-placeholder="验证码"><a href="javascript:;"><img id="m_code" style="width:78px;height:40px;"\
@@ -1911,7 +1911,7 @@ function loginDialog() {
     var registerTpl = '\
         <div class="titleWrap"><div class="title">注册<a class="shut-down-icon Js-pop-close"></a></div></div>\
         <div class="regwrap clearfix">\
-            <form action="/user-ajax_register"  wx-validator-ajax  wx-validator name="registerForm" wx-validator-single-error="registerFormError" >\
+            <form action="/User-ajax_register"  wx-validator-ajax  wx-validator name="registerForm" wx-validator-single-error="registerFormError" >\
                 <div class="logleft">\
                     <span id="registerFormError" class="error-text"></span>\
                     <div class="shell clearfix">\
@@ -1957,7 +1957,7 @@ function loginDialog() {
     var emailRegisterTpl ='\
         <div class="titleWrap"><div class="title">注册<a class="shut-down-icon Js-pop-close"></a></div></div>\
         <div class="logwrap clearfix">\
-            <form action="/user-ajax_register" wx-validator-ajax="" wx-validator="" name="registerEmailForm" wx-validator-single-error="registerFormError" autocomplete="off">\
+            <form action="/User-ajax_register" wx-validator-ajax="" wx-validator="" name="registerEmailForm" wx-validator-single-error="registerFormError" autocomplete="off">\
                 <div class="logleft">\
                     <span id="registerFormError" class="error-text"></span>\
                     <div class="shell clearfix">\
@@ -2076,7 +2076,7 @@ function loginDialog() {
                 $error.text("请输入图形验证码");
                 return;
             } else {
-                wx.sendData("/user-checkvcode", "v_code=" + v_code, function (data) {
+                wx.sendData("/User-checkvcode", "v_code=" + v_code, function (data) {
                     if (data.status)
                         next();
                     else if ($("#v_code").prop("disabled")) {
@@ -2087,7 +2087,7 @@ function loginDialog() {
                 });
             }
         }).then(function () {
-            wx.sendData("/user-ajax_send_code", query, function (data) {
+            wx.sendData("/User-ajax_send_code", query, function (data) {
             	$('#m_code').click();
                 if (data.status == 1) {
                     var interId, time = 60, ele = $("#Js-registerGetCode");
@@ -2613,7 +2613,7 @@ function zcAnalytics() {
 
 function aysnYsh() {
     $.getScript('http://www.yuanshihui.com/about/go?' + Math.random(), function () {
-        $.post("/user-ajax_ysh_login", {
+        $.post("/User-ajax_ysh_login", {
             'userId': cookieUser.userId,
             'userToken': cookieUser.userToken,
             'logTime': cookieUser.logTime
@@ -2788,7 +2788,7 @@ function showPerfectUserInfoWindow(status){
     }
     function close(){
         closeWindow();
-        $.getJSON(serviceUrl('user/showonce?v=3'),null,function(data){ });
+        $.getJSON(serviceUrl('User/showonce?v=3'),null,function(data){ });
     };
 
     $.getJSON(serviceUrl('deal/dealcates?v=3'),null,function(data){
@@ -2995,7 +2995,7 @@ function showPerfectUserInfoWindow(status){
                 }
 
                 $(this).removeClass('btn-orange').addClass('btn-light-gray');
-                $.post(serviceUrl('user/sendsms?v=3'),postData,function(data){
+                $.post(serviceUrl('User/sendsms?v=3'),postData,function(data){
                     if(data.errno == 0) {
                         var time = 60;
                         var interval = setInterval(function () {
@@ -3075,7 +3075,7 @@ function showPerfectUserInfoWindow(status){
                     }
                     var _this = this;
                     $(_this).removeClass('btn-blue').addClass('btn-light-gray');
-                    $.post(serviceUrl('/user/collectemail?v=3'),postData,function(data){
+                    $.post(serviceUrl('/User/collectemail?v=3'),postData,function(data){
                         $(_this).removeClass('btn-light-gray').addClass('btn-blue');
                         if(data.errno == 0){
                             closeWindow();
